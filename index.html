@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roeth Paula S. Habungan - AI Automation Specialist</title>
-    <base href="/roeth-habungan-portfolio/">
+    <base href="/roeth-portfolio/">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -516,5 +516,19 @@
             <p>&copy; 2026 Roeth Paula S. Habungan. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Fix image paths for GitHub Pages
+        (function() {
+            const repoName = window.location.pathname.split('/').filter(Boolean)[0] || '';
+            const basePath = repoName ? '/' + repoName + '/' : '/';
+            
+            // Update all image sources
+            document.querySelectorAll('img[src^="assets/"]').forEach(img => {
+                const currentSrc = img.getAttribute('src');
+                img.src = basePath + currentSrc;
+            });
+        })();
+    </script>
 </body>
 </html>
